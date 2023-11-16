@@ -6,8 +6,8 @@ import pytest
 import torch
 
 from outlines.models import OpenAI
+from outlines.generate.sequence import Sequence
 from outlines.models.tokenizer import Tokenizer
-from outlines.text.generate.sequence import Sequence
 
 
 def test_openai_error():

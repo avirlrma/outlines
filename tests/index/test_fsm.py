@@ -2,8 +2,7 @@ import interegular
 import numba
 import pytest
 
-from outlines.models.transformers import TransformersTokenizer
-from outlines.text.fsm import (
+from outlines.index.fsm import (
     _walk_fsm,
     create_fsm_index,
     create_fsm_index_end_to_end,
@@ -14,6 +13,7 @@ from outlines.text.fsm import (
     make_deterministic_fsm,
     walk_fsm,
 )
+from outlines.models.transformers import TransformersTokenizer
 
 
 def walk_fsm_numba(
@@ -429,7 +429,7 @@ def test_json_index_performance():
     from pydantic import BaseModel, constr
 
     import outlines.models as models
-    from outlines.text.generate.regex import Regex, build_regex_from_object
+    from outlines.generate.regex import Regex, build_regex_from_object
 
     class Weapon(str, Enum):
         sword = "sword"
