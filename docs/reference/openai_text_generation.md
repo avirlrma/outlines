@@ -9,7 +9,7 @@ model = models.openai("text-davinci-003")
 model = models.openai("gpt4")
 
 print(type(model))
-# OpenAIAPI
+# OpenAI
 ```
 
 !!! note

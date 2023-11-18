@@ -5,8 +5,8 @@ import numpy as np
 import pytest
 import torch
 
-from outlines.models import OpenAI
 from outlines.generate.sequence import Sequence
+from outlines.models import OpenAI
 from outlines.models.tokenizer import Tokenizer
 
 
