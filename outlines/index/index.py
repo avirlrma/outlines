@@ -3,7 +3,7 @@ from typing import NewType, Protocol, Union
 
 import torch
 
-State = NewType("State", int)
+FSMState = NewType("FSMState", int)
 
 
 @dataclass(frozen=True)
@@ -22,12 +22,12 @@ class FillInstruction:
 FSMInstruction = Union[GenerateInstruction, FillInstruction]
 
 
-class Index(Protocol):
-    def next_instruction(self, state: State) -> FSMInstruction:
+class FSM(Protocol):
+    def next_instruction(self, state: FSMState) -> FSMInstruction:
         ...
 
-    def next_state(self, state: State, token_id: torch.Tensor) -> State:
+    def next_state(self, state: FSMState, token_id: torch.Tensor) -> FSMState:
         ...
 
-    def is_final_state(self, state: State) -> bool:
+    def is_final_state(self, state: FSMState) -> bool:
         ...
